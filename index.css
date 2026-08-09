@@ -286,7 +286,27 @@
         text-decoration: none;
         color: white;
     }
-    @media(max-width:480px)
+    @media(max-width: 768px)
+    {
+        .dsply-prdct
+        {
+            height: auto;
+            height: 100vh;
+        }
+        .hdng-txt
+        {
+            font-size: 4.6rem;
+        }
+        #text-box
+        {
+            width: 90%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            text-align: center;
+        }
+    }
+  @media(max-width:480px)
     {
         .main-heading
         {
@@ -388,25 +408,5 @@
         {
             font-size: 14px;   
             gap: 10px;
-        }
-    }
-    @media(max-width: 768px)
-    {
-        .dsply-prdct
-        {
-            height: auto;
-            height: 100vh;
-        }
-        .hdng-txt
-        {
-            font-size: 4.6rem;
-        }
-        #text-box
-        {
-            width: 90%;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            text-align: center;
         }
     }
