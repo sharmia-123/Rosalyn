@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.6.0/fonts/remixicon.css" rel="stylesheet"/>
+    <title>Gown Display</title>
+</head>
+<style>
+    *
+    {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+    :root
+    {
+        --cream: #FADADD;
+        --butter: #FDEEA4;
+        --rose: #E8B4B8;
+        --white: #FE;
+        --charcoal: #3A3A3A;
+        --sage: #DCE5D8;
+    }
+    html,
+    body
+    {
+        background-color: var(--cream);
+    }
+    .main-container
+    {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        height: 90vh;
+    }
+    .card
+    {
+        width: 50%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: var(--rose);
+    }
+    .card-box
+    {
+        width: 80%;
+        height: 100%;
+    }
+    .card-box img
+    {
+        width: 80%;
+        height: 100%;
+        object-fit: cover;
+    }
+    /*  */
+    .contaner-right
+    {
+        width: 50%;
+        height: 100%;
+        display: flex;
+        flex-direction: row;
+    }
+    .small
+    {
+        width: 15vh;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        justify-content: center;
+    }
+    .box-btn
+    {
+        width: 100%;
+        height: 100px;
+        background-color: #DCE5D8;
+    }
+    .box-btn img
+    {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+    }
+    .large
+    {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .product-description
+    {
+        padding: 0 50px;
+        width: 80%;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+    .prdct-name
+    {
+        font-size: 45px;
+        font-weight: bold;
+        color: var(--charcoal);
+    }
+    .product-price
+    {
+        font-size: 30px;
+        font-weight: 600;
+        color: var(--charcoal);
+    }
+    .description
+    {
+        font-size: 17px;
+        color: var(--charcoal);
+    }
+    /*  */
+    .logo
+    {
+        font-size: 2.5rem;
+        font-weight: bold;
+        color: var(--charcoal);
+    }
+    .nav-rgt
+    {
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+    }
+    .nav-rgt i
+    {
+        font-size: 25px;
+        color: var(--charcoal);
+    }
+    .nav-rgt a
+    {
+        text-decoration: none;
+    }
+    .nav-cntr
+    {
+        display: flex;
+        flex-direction: row;
+        gap: 20px;
+    }
+    .nav-cntr a
+    {
+        text-decoration: none;
+        color: var(--charcoal);
+    }
+    .navbar
+    {
+        width: 100%;
+        height: 80px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 30px;
+    }
+    .icon-row
+    {
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+    }
+    .icon-row button
+    {
+        width: 130px;
+        height: 50px;
+        border: none;
+        color: var(--charcoal);
+        background-color: var(--butter);
+        font-size: 16px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+
+    #wishlist-btn
+    {
+        background-color: var(--cream);
+        border:5px solid #FDEEA4;
+    }
+    .icon-row button:hover
+    {
+        background-color: var(--rose);
+    }
+        #wishlist-count
+    {
+        color: var(--charcoal);
+    }
+    #cart-count
+    {
+        color: var(--charcoal);
+    }
+    @media(max-width:480px)
+    {
+        .main-container
+        {
+            display: flex;
+            flex-direction: column;
+            height: auto;
+        }
+        .contaner-right
+        {
+            width: 100%;
+        }
+        .product-description
+        {
+            padding: 0 10px;
+        }
+        .card
+        {
+            width: 100%;
+        
+        }
+        .card-box
+        {
+            width: 100%;
+        }
+        .navbar
+        {
+            padding: 0 10px;
+            flex-wrap: wrap;
+        }
+        .nav-cntr
+        {
+            gap: 10px;
+        }
+        .logo
+        {
+            font-size: 1.7rem;
+        }
+        .nav-rgt
+        {
+            gap: 10px;
+        }
+        .nav-rgt i
+        {
+            font-size: 20px;
+        }
+        .prdct-name
+        {
+            font-size: 30px;
+        }
+        .product-price
+        {
+            font-size: 20px;
+        }
+        .icon-row button
+        {
+            width: 120px;
+        }
+        .product-description
+        {
+            padding-top: 15px;
+        }
+        .icon-row button
+        {
+            width: 120px;
+        }
+        .product-description
+        {
+            padding-top: 15px;
+        }
+        .card-box 
+        {
+            width: 95%;
+            height: 100%;
+        }
+        .card-box img
+        {
+            width: 95%;
+        }
+    }
+    @media(max-width: 768px)
+    {
+        .product-description
+        {
+            padding: 0 10px;
+        }
+        .prdct-name
+        {
+            font-size: 30px;
+        }
+        .product-price
+        {
+            font-size: 20px;
+        }
+        .small
+        {
+            gap: 0;
+            display: flex;
+            justify-content: center;
+        }
+    }
+</style>
+<body>
+    <header>
+    <div class="navbar">
+      <div class="nav-lft">
+        <div class="logo">Rosalyn</div>
+      </div>
+      <div class="nav-cntr">
+        <a href="index.html">Home</a>
+        <a href="index.html#container-four">About</a>
+        <a href="ProductSectionOne.html">Collections</a>
+      </div>
+      <div class="nav-rgt">
+        <a href="wishlist.html">
+        <i class="ri-heart-3-line"></i>
+        <span id="wishlist-count">0</span>
+        </a>
+        <a href="cart.html">
+        <i class="ri-shopping-bag-3-line"></i>
+        <span id="cart-count">0</span>
+        </a>
+      </div>
+    </div>
+  </header>
+    <div class="main-container"
+    data-id="12"
+    data-name="Lavender Whisper Gown"
+    data-price="7799"
+    data-img="images/gown4.png">
+        <div class="card">
+            <div class="card-box">
+                <img class="main-gown" src="images/gown4.png">
+            </div>
+        </div>
+        <div class="contaner-right">
+            <div class="small">
+                <a href="gown1.html">
+                    <div class="box-btn">
+                    <img src="images/gown1.png">
+                </div>
+                </a>
+                <a href="gown3.html">
+                    <div class="box-btn">
+                    <img src="images/gown3.png">
+                </div>
+                </a>
+                <a href="gown4.html">
+                    <div class="box-btn">
+                    <img src="images/gown4.png">
+                </div>
+                </a>
+                <a href="gown5.html">
+                    <div class="box-btn">
+                    <img src="images/gown5.png">
+                </div>
+                </a>
+                <a href="gown6.html">
+                    <div class="box-btn">
+                    <img src="images/gown6.png">
+                </div>
+                </a>
+            </div>
+            <div class="large">
+            <div class="product-description">
+            <div class="prdct-name">
+                Lavender Whisper Gown
+            </div>
+            <div class="product-price">
+                Rs. 7,799
+            </div>
+            <div class="description">
+                 A soft lavender satin mermaid gown with a romantic sheer corset bodice. Covered in delicate floral lace applique and crystal detail, it featurea sweetheart neckline, elegant ruching, and a dramatic side slit that flows into a subtle train. Ethereal and feminine.
+            </div>
+            <div class="description">
+                COLOR: Emerald Green 
+            </div>
+            <div class="description">
+                SILHOUETTE: Fitted Mermaid
+            </div>
+            <div class="description">
+                LENGTH: Floor Length
+            </div>
+             <div class="description">
+                FABRIC: Premium Satin
+            </div> 
+            <div class="description">
+                NECKLINE: Sweetheart
+            </div>
+            <div class="description">
+                OCCASION: Evening / Gala
+            </div>
+            <div class="description">
+                ★★★ 4.9 203 Reviews
+            </div>
+            <div class="icon-row">
+            <div class="icon-row">
+                <button class="add-wishlist">Add To Wishlist</button>
+                <button class="add-cart" id="wishlist-btn">Add To Cart</button>
+                <!-- <i class="ri-heart-3-line add-wishlist"></i>  -->
+                <!-- <i class="ri-shopping-bag-3-line add-cart"></i> -->
+            </div>
+            </div>
+            </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"></script>
+<script>
+   const tl = gsap.timeline();
+
+   gsap.from(".main-gown", {
+    x: -150,
+    y: -150,
+    opacity:0,
+    duration:1.4,
+    ease: "power4.out",
+    scale: 0.9
+   })
+   document.addEventListener('DOMContentLoaded', function() {
+  let cart = JSON.parse(localStorage.getItem('Rosalyn_cart')) || [];
+  let wishlist = JSON.parse(localStorage.getItem('Rosalyn_wishlist')) || [];
+
+  function saveToStorage() {
+    localStorage.setItem('Rosalyn_cart', JSON.stringify(cart));
+    localStorage.setItem('Rosalyn_wishlist', JSON.stringify(wishlist));
+  }
+
+  function updateCounts() {
+    const cartCountEl = document.getElementById('cart-count');
+    const wishCountEl = document.getElementById('wishlist-count');
+    if(cartCountEl) cartCountEl.innerText = cart.reduce((total, item) => total + item.qty, 0);
+    if(wishCountEl) wishCountEl.innerText = wishlist.length;
+  }
+
+  function updateWishlistButton() {
+    const container = document.querySelector('.main-container');
+    const id = container.dataset.id;
+    const wishBtn = document.querySelector('.add-wishlist'); 
+    if(!wishBtn) return;
+    if (wishlist.find(p => p.id == id)) {
+      wishBtn.classList.add('in-wishlist');
+      wishBtn.innerText = 'In Wishlist';
+    } else {
+      wishBtn.classList.remove('in-wishlist');
+      wishBtn.innerText = 'Add To Wishlist';
+    }
+  }
+
+  document.querySelector('.add-cart').addEventListener('click', (e) => {
+    e.preventDefault();
+    const container = e.target.closest('.main-container'); 
+    const item = {
+      id: container.dataset.id,
+      name: container.dataset.name,  
+      price: parseInt(container.dataset.price),
+      img: container.dataset.img,
+      qty: 1
+    };
+    const existing = cart.find(p => p.id == item.id);
+    if (existing) existing.qty++; 
+    else cart.push(item);
+    saveToStorage();
+    updateCounts();
+    alert(`${item.name} added to Cart!`);
+  });
+
+  document.querySelector('.add-wishlist').addEventListener('click', (e) => {
+    e.preventDefault();
+    const container = e.target.closest('.main-container'); 
+    const item = {
+      id: container.dataset.id,
+      name: container.dataset.name,
+      price: parseInt(container.dataset.price),
+      img: container.dataset.img
+    };
+    const existingIndex = wishlist.findIndex(p => p.id == item.id);
+    if (existingIndex === -1) {
+        wishlist.push(item);
+        alert(`${item.name} added to Wishlist!`);
+    } else {
+        wishlist.splice(existingIndex, 1);
+        alert(`${item.name} removed from Wishlist!`);
+    }
+    saveToStorage();
+    updateCounts();
+    updateWishlistButton(); 
+  });
+
+  updateCounts(); 
+  updateWishlistButton(); 
+}); 
+</script>
+</body>
+</html>
